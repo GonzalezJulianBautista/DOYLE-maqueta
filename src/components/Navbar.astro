@@ -2,10 +2,11 @@
 <header id="cs-navigation">
     <div class="cs-container">
       <!--Nav Logo-->
-      <a href="" class="cs-logo" aria-label="back to home">
+      <a href="/" class="navbar-brand">
         <img
-          src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Flogo-black.svg"
+          src="https://i.postimg.cc/gjW2c9QJ/DOYLE-logo-marron-s-fondo.png"
           alt="logo"
+          id="navbar-logo"
           width="210"
           height="29"
           aria-hidden="true"
@@ -26,24 +27,21 @@
         <div class="cs-ul-wrapper">
           <ul id="cs-expanded" class="cs-ul" aria-expanded="false">
             <li class="cs-li">
-              <a href="" class="cs-li-link cs-active"> Home</a>
+              <a href="#hero-1946" class="cs-li-link cs-active"> Inicio</a>
             </li>
             <li class="cs-li">
-              <a href="" class="cs-li-link"> About</a>
+              <a href="#sbsr-1363" class="cs-li-link">Nosotros</a>
             </li>
             <li class="cs-li">
-              <a href="" class="cs-li-link"> Services</a>
+              <a href="#gallery-43" class="cs-li-link"> Portfolio</a>
             </li>
             <li class="cs-li">
-              <a href="" class="cs-li-link"> About Us</a>
-            </li>
-            <li class="cs-li">
-              <a href="" class="cs-li-link"> FAQ</a>
+              <a href="#reviews-510" class="cs-li-link">Clientes</a>
             </li>
           </ul>
         </div>
       </nav>
-      <a href="" class="cs-button-solid cs-nav-button">Contact Us</a>
+      <a href="#contact-1388" class="cs-button-solid cs-nav-button">Contacto</a>
       <!--Dark Mode toggle, uncomment button code if you want to enable a dark mode toggle-->
       <!-- <button id="dark-mode-toggle" aria-label="dark mode toggle">
               <svg class="cs-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" style="enable-background:new 0 0 480 480" xml:space="preserve"><path d="M459.782 347.328c-4.288-5.28-11.488-7.232-17.824-4.96-17.76 6.368-37.024 9.632-57.312 9.632-97.056 0-176-78.976-176-176 0-58.4 28.832-112.768 77.12-145.472 5.472-3.712 8.096-10.4 6.624-16.832S285.638 2.4 279.078 1.44C271.59.352 264.134 0 256.646 0c-132.352 0-240 107.648-240 240s107.648 240 240 240c84 0 160.416-42.688 204.352-114.176 3.552-5.792 3.04-13.184-1.216-18.496z"/></svg>
@@ -62,6 +60,7 @@
       /* reset margin and padding so there's no gap between the nav and the screen edges */
       margin: 0;
          padding: 0;
+      scroll-behavior: smooth;
     }
   
     /* Mobile - 1023px */
@@ -74,16 +73,18 @@
         padding: 0.75rem 1rem;
         /* prevents padding and border from affecting height and width */
         box-sizing: border-box;
-        background-color: #fff;
+        background-color: rgba(191, 142, 142, 0.8); /* Fondo blanco con transparencia (70%) */
+        backdrop-filter: blur(15px); /* Efecto de desenfoque */
         box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
         position: fixed;
         z-index: 10000;
       }
+      
       #cs-navigation:before {
         content: "";
         width: 100%;
         height: 0vh;
-        background: rgba(0, 0, 0, 0.6);
+        background: rgba(0, 0, 0, 0.5) /* cambia la transparencia de fondo cuando se despliega el hamburger menu*/;
         -webkit-backdrop-filter: blur(10px);
         backdrop-filter: blur(10px);
         position: absolute;
@@ -170,7 +171,7 @@
         width: 100%;
         height: 2px;
         border-radius: 2px;
-        background-color: #1a1a1a;
+        background-color: #261818; /* cambia el color de la cruz del hamurguer */
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
@@ -207,10 +208,10 @@
       }
       #cs-navigation .cs-ul-wrapper {
         width: 100%;
-        height: auto;
-        padding-bottom: 2.4em;
+        height: auto; /* cambiar esto a "auto" hizo que no hayan excedentes abajo de la barra horizontal */
+        padding-bottom: auto;
         opacity: 0;
-        background-color: #fff;
+        background-color: #F9F7F7; /* cambia el interior del menu */
         box-shadow: inset rgba(0, 0, 0, 0.2) 0px 8px 24px;
         overflow: hidden;
         position: absolute;
@@ -225,7 +226,7 @@
       }
       #cs-navigation .cs-ul {
         margin: 0;
-        padding: 3rem 0 0 0;
+        padding: 0.8rem 0 0 0;
         width: 100%;
         height: auto;
         max-height: 65vh;
@@ -315,11 +316,25 @@
       #cs-navigation .cs-button-solid {
         display: none;
       }
+      .navbar-brand {
+  position: absolute;
+  left: 0cm; /* Logo pegado a la izquierda */
+  top: 50%; /* Centrado verticalmente */
+  transform: translateY(-50%); /* Ajuste del centrado */
+}
+
+      #navbar-logo {
+  width: 140px;  /* Puedes ajustar el valor según tus necesidades */
+  height: auto;  /* Mantiene la proporción de la imagen */
+}
     }
   
     /*-- -------------------------- -->
   <---     Desktop Navigation     -->
   <--- -------------------------- -*/
+  html {
+  scroll-behavior: smooth; /* esto hace que baje suave cuando tocas un botón */
+} 
   
     /* Small Desktop - 1024px */
     @media only screen and (min-width: 64rem) {
@@ -328,7 +343,8 @@
         padding: 0 1rem;
         /* prevents padding and border from affecting height and width */
         box-sizing: border-box;
-        background-color: #fff;
+        background-color: rgba(191, 142, 142, 0.8); /* Fondo blanco con transparencia (70%) */
+        backdrop-filter: blur(15px); /* Efecto de desenfoque */
         box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
         position: fixed;
         z-index: 10000;
@@ -381,7 +397,7 @@
       }
       #cs-navigation .cs-li-link {
         /* 14px - 16px */
-        font-size: clamp(0.875rem, 1vw, 1rem);
+        font-size: clamp(0.875rem, 1vw, 4rem) /* cambia el tamaño de la letra en desktop*/;
         line-height: 1.5em;
         text-decoration: none;
         margin: 0;
@@ -409,7 +425,7 @@
         transition: width 0.3s;
       }
       #cs-navigation .cs-button-solid {
-        font-size: 1rem;
+        font-size: 1.12rem; /* cambia el tamaño de la letra del botón contacto de la barra */
         /* 46px - 56px */
         line-height: clamp(2.875em, 5.5vw, 3.5em);
         text-decoration: none;
@@ -443,6 +459,20 @@
       #cs-navigation .cs-button-solid:hover:before {
         width: 100%;
       }
+
+      .navbar-brand {
+  position: absolute;
+  left: 1cm; /* Logo pegado a la izquierda */
+  top: 50%; /* Centrado verticalmente */
+  transform: translateY(-50%); /* Ajuste del centrado */
+}
+
+      #navbar-logo {
+  width: 250px;  /* Puedes ajustar el valor según tus necesidades */
+  height: auto;  /* Mantiene la proporción de la imagen */
+}
+
+
     }
   </style>
   
@@ -451,6 +481,7 @@
     var CSbody = document.querySelector("body");
     const CSnavbarMenu = document.querySelector("#cs-navigation");
     const CShamburgerMenu = document.querySelector("#cs-navigation .cs-toggle");
+    const CSmenuWrapper = document.querySelector(".cs-ul-wrapper"); // the actual menu area
   
     CShamburgerMenu.addEventListener("click", function () {
       CShamburgerMenu.classList.toggle("cs-active");
@@ -460,7 +491,7 @@
       ariaExpanded();
     });
   
-    // checks the value of aria expanded on the cs-ul and changes it accordingly whether it is expanded or not
+    // Function to check the aria-expanded value and update it accordingly
     function ariaExpanded() {
       const csUL = document.querySelector("#cs-expanded");
       const csExpanded = csUL.getAttribute("aria-expanded");
@@ -472,10 +503,22 @@
       }
     }
   
-    // mobile nav toggle code
-    const dropDowns = Array.from(
-      document.querySelectorAll("#cs-navigation .cs-dropdown")
-    );
+    // Function to close the menu when clicking outside
+    document.addEventListener("click", function (event) {
+      const isClickInsideMenu = CSmenuWrapper.contains(event.target);
+      const isClickOnToggle = CShamburgerMenu.contains(event.target);
+  
+      if (!isClickInsideMenu && !isClickOnToggle && CSnavbarMenu.classList.contains("cs-active")) {
+        // Close the menu
+        CShamburgerMenu.classList.remove("cs-active");
+        CSnavbarMenu.classList.remove("cs-active");
+        CSbody.classList.remove("cs-open");
+        ariaExpanded();
+      }
+    });
+  
+    // mobile nav toggle code for dropdowns
+    const dropDowns = Array.from(document.querySelectorAll("#cs-navigation .cs-dropdown"));
     for (const item of dropDowns) {
       const onClick = () => {
         item.classList.toggle("cs-active");
@@ -483,3 +526,4 @@
       item.addEventListener("click", onClick);
     }
   </script>
+  
