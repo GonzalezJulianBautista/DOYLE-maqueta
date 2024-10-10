@@ -3,18 +3,15 @@
 <!-- ============================================ -->
 
 <section id="hero-1946">
+  <div class="overlay"></div> <!-- Overlay for background image -->
   <div class="cs-container">
       <div class="cs-content">
-          <h2 class="cs-title">Creamos contenido inmobiliario de alto impacto</h2>
+          <h2 class="cs-title">FOTOGRAFÍA CON DOYLE, TU PROPIEDAD SE MUEVE</h2>
           <div class="cs-flex">
-              <p class="cs-text">Capturamos al máximo el potencial de tu propiedad generando el mejor contenido del mercado. Vende más dándole un toque visual único a tu propiedad.</p>
-              <a href="" class="cs-button-solid">Consultar</a>
+              <p class="cs-text">Capturamos al máximo el potencial de tu propiedad generando el mejor contenido del mercado. Vende y alquila más dándole un toque visual único a tu propiedad.</p>
+              <a href="#contact-1388" class="cs-button-solid">Consultar</a>
           </div>
       </div>
-
-      <!-- Video container -->
-
-
       <ul class="cs-card-group">
           <li class="cs-item">
               <picture class="cs-icon-picture">
@@ -57,19 +54,34 @@
 </section>
 
 <style>
-/* --------------------------- */
-/*            Hero             */
-/* --------------------------- */
+/*-- -------------------------- -->
+<---            Hero            -->
+<--- -------------------------- -*/
 
-/* Mobile - 360px */
-@media only screen and (min-width: 0rem) {
+/* Base styles */
 #hero-1946 {
   padding: var(--sectionPadding);
   padding-top: clamp(10rem, 20vw, 12.5rem);
   overflow: hidden;
   position: relative;
   z-index: 1;
+  background-image: url('https://i.postimg.cc/SsmsLbQM/pexels-heyho-8146156.jpg'); /* Add your background image */
+  background-size: cover; /* Cover the entire section */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent repeating */
+  background-color: rgba(255, 255, 255, 0.8); /* Fallback color */
 }
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent black overlay */
+    z-index: 0; /* Position it behind the content */
+}
+
 #hero-1946 .cs-container {
   width: 100%;
   max-width: 80rem;
@@ -80,6 +92,7 @@
   position: relative;
   z-index: 1;
 }
+
 #hero-1946 .cs-content {
   text-align: center;
   width: 100%;
@@ -90,15 +103,23 @@
   position: relative;
   z-index: 1;
 }
+
 #hero-1946 .cs-flex {
   flex: none;
 }
+
 #hero-1946 .cs-title {
   font-size: clamp(2.438rem, 5vw, 3.813rem);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.09); /* Shadow effect */
 }
+
 #hero-1946 .cs-text {
   margin-bottom: 1.25rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.09); /* Shadow effect */
+  font-size: clamp(1.60rem, 3vw, 1.45rem);
+  font-weight: 500;
 }
+
 #hero-1946 .cs-button-solid {
   font-size: 1rem;
   font-weight: 700;
@@ -116,24 +137,12 @@
   z-index: 1;
   transition: color 0.3s, background-color 0.3s;
 }
+
 #hero-1946 .cs-button-solid:hover {
   background-color: #000;
   color: #fff;
 }
-#hero-1946 .cs-video {
-  width: 100%;
-  height: clamp(17.5rem, 58.6vw, 31.875rem);
-  margin-bottom: clamp(1rem, 2vw, 1.25rem);
-  position: relative;
-  display: block;
-}
-#hero-1946 .cs-video video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 2.5rem;
-  position: absolute;
-}
+
 #hero-1946 .cs-card-group {
   width: 100%;
   margin: 0;
@@ -143,6 +152,7 @@
   grid-template-columns: repeat(12, 1fr);
   gap: clamp(1rem, 2vw, 1.25rem);
 }
+
 #hero-1946 .cs-item {
   text-align: center;
   list-style: none;
@@ -150,7 +160,7 @@
   margin: 0;
   box-sizing: border-box;
   padding: clamp(1.5rem, 3vw, 2rem);
-  background-color: #f7f7f7;
+  background-color: #F7F7F7;
   border-radius: 1.25rem;
   display: flex;
   flex-direction: column;
@@ -160,26 +170,32 @@
   z-index: 1;
   transition: border-color 0.3s;
 }
+
 #hero-1946 .cs-item:hover {
   border-color: var(--primary);
 }
+
 #hero-1946 .cs-item:hover .cs-h3 {
   color: var(--primary);
 }
+
 #hero-1946 .cs-item:hover .cs-icon {
   transform: rotateY(360deg);
 }
+
 #hero-1946 .cs-icon-picture {
   margin-bottom: 1.25rem;
   perspective: 700px;
   transform-style: preserve-3d;
 }
+
 #hero-1946 .cs-icon {
   width: 2.5rem;
   height: auto;
   display: block;
   transition: transform 0.5s;
 }
+
 #hero-1946 .cs-h3 {
   font-size: 1.25rem;
   line-height: 1.5em;
@@ -189,6 +205,7 @@
   color: var(--headerColor);
   transition: color 0.3s;
 }
+
 #hero-1946 .cs-item-text {
   font-size: clamp(0.875rem, 1.5vw, 1rem);
   line-height: 1.5em;
@@ -196,39 +213,63 @@
   margin: 0;
   color: var(--bodyTextColor);
 }
+
+/* Media Queries */
+
+/* Mobile - 360px */
+@media only screen and (max-width: 48rem) {
+  #hero-1946 .cs-title {
+      font-size: 1.75rem;
+  }
+
+  #hero-1946 .cs-button-solid {
+      font-size: 0.875rem;
+  }
+
+  #hero-1946 .cs-text {
+      font-size: 0.875rem;
+  }
+
+  #hero-1946 .cs-item {
+      padding: 1rem;
+  }
 }
 
 /* Tablet - 768px */
 @media only screen and (min-width: 48rem) {
-#hero-1946 .cs-text {
-  font-size: 1.25rem;
-}
-#hero-1946 .cs-item {
-  text-align: left;
-  margin: 0;
-  align-items: flex-start;
-  grid-column: span 6;
-}
+  #hero-1946 .cs-item {
+      text-align: left;
+      align-items: flex-start;
+      grid-column: span 6; /* Adjust the grid layout */
+  }
 }
 
 /* Small Desktop - 1024px */
 @media only screen and (min-width: 64rem) {
-#hero-1946 .cs-content {
-  display: flex;
-  flex-direction: column;
-}
-#hero-1946 .cs-title {
-  max-width: 46.875rem;
-}
-#hero-1946 .cs-item {
-  grid-column: span 3;
-}
+  #hero-1946 .cs-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  #hero-1946 .cs-title {
+      max-width: 46.875rem;
+  }
+
+  #hero-1946 .cs-item {
+      grid-column: span 3; /* Adjust for larger screens */
+  }
 }
 
 /* Large Desktop - 1300px */
 @media only screen and (min-width: 81.25rem) {
-#hero-1946 .cs-container {
-  max-width: 70rem;
-}
+  #hero-1946 .cs-container {
+      max-width: 70rem;
+  }
+
+  #hero-1946 .cs-title {
+      font-size: 3rem; /* Larger title for big screens */
+  }
+  
 }
 </style>
